@@ -1313,7 +1313,7 @@ class GameModeManager {
     }
     
     startNextMode(arena, players, ball) {
-        // Don't repeat consecutive modes (not needed for sequential play)
+        // Sequential mode progression through all 5 modes
         this.currentModeIndex++;
         
         if (this.currentModeIndex >= this.modeClasses.length) {
@@ -1357,7 +1357,7 @@ class MainScene extends Phaser.Scene {
         this.modeManager = new GameModeManager(this);
         this.arena = new Arena(this);
         
-        // Create controls
+        // Create controls (as specified in requirements: P1=WASD+F, P2=Arrows+Shift)
         this.controls = {
             player1: {
                 up: this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.W),
